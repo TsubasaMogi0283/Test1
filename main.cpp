@@ -1,18 +1,18 @@
 ﻿#include <stdio.h>
 
 int main() {
+	char str[10] = "";
 
-	int switchOne = 2017;
-	int wiiU = -2012;
-	int playStation5 = 2020;
-	float ds = 2004.0f;
-	float familyComputer = -1990.0f;
+	//今回はKamataと入力します。
+	printf("文字列を入力してください\n");
+	//～～～～("%s", str);①
+	scanf_s("%s", str, 10);
 
-	printf("(Switch:%06d)\n", switchOne);
-	printf("(Wii U:%06d)\n", wiiU);
-	printf("(PlayStation :%-06d)\n", playStation5);
-	printf("(DS:%010.3f)\n", ds);
-	printf("(FamilyComputer:%-10.3f)\n", familyComputer);
+	//printf("%〇\n", str[1]);//②
+	printf("%c\n", str[1]);//③
+
+	//printf("%〇\n", 〇);//④ c,s,d,t⑤&str,str
+	printf("%s\n", str);//⑥Kamata
 
 	return 0;
 }
