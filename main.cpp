@@ -1,24 +1,61 @@
 ﻿#include <stdio.h>
-#define CLASS_SIZE 5
-#define GRADE_SIZE 4
+#define ORIGIN_WEIGHT 75
+#define PREDICTION 60
+#define CONFIDENCE 15
 
 int main() {
-	const int kSchoolSize = 3;
+	bool me = true;
 
-	//int data[①] = { 31,31,31,30,18 };
-	int data[CLASS_SIZE] = { 31,31,31,30,18 };
-	int data2[5] = { 1,2,3,4 };
+	printf("世の中には2種類の男がいる\n");
+	if (me) {
+		printf("俺\n");
+	} else {
+		printf("俺以外\n");
+	}
+	// ①何が表示されるか?
+	// 俺
+	// 俺以外
+	// 何も表示されない
+	// コンパイルエラー
 
-	printf("%d\n", data[0]);//②
-	data[4] = data[1];
-	printf("%d\n", data[4]);//③
-	//printf("%d\n", data[CLASS_SIZE]);//④配列の範囲外アクセスについてチェック
 
-	int tmp = data[3];
-	data[1] = tmp + 5;
-	data[2] = data[1];
-	printf("%d", data[2]);//⑤
-	printf("%d", data2[4]);//⑥
+	int star = 100;
+	if (me = star) {
+		printf("俺という存在が満点\n");
+
+	} else {
+		printf("俺はスターを超える\n");
+	}
+	// ②何が表示されるか?,
+	// 俺という存在が満点
+	// 俺はスターを超える
+	// 何も表示されない
+	// コンパイルエラー
+
+
+	if (ORIGIN_WEIGHT <= PREDICTION + CONFIDENCE) {
+		printf("重力すら俺に見惚れている\n");
+	} else {
+		printf("自信が積み重なってできた結果\n");
+	}
+	// ③何が表示されるか?
+	// 重力すら俺に見惚れている
+	// 自信が積み重なってできた結果
+	// 何も表示されない
+	// コンパイルエラー
+
+
+	int income = 0;
+	if (!income) {
+		printf("下がったら、あとは上がるだけ。\n");
+	} else {
+		printf("現状維持は退化。\n");
+	}
+	// ④何が表示されるか？
+	// 下がったら、あとは上がるだけ
+	// 現状維持は退化
+	// 何も表示されない
+	// コンパイルエラー
 
 	return 0;
 }
