@@ -1,62 +1,76 @@
 ﻿#include <stdio.h>
 
+//ゴールド会員の割引率は常に 30 % 引きです。
 
-int main() {
-    int year = 2026; // 判定したい西暦
+//レギュラー会員の割引率は以下の通りです。
+//利用時間が 200分 以上 の場合は 20 % 引き
+//利用時間が 100分 以上 200分 未満 の場合は 10 % 引き
+//それ以外（100分未満）は 割引なし（0 % ）
 
-    // 4で割り切れて（かつ）100で割り切れない
-    //if ([空欄]) {
-    //year % 4 == 0 || year % 100 != 0
-    //year % 4 == 0 && year % 100 != 0〇
-    //year / 4 == 0 && year / 100 != 0
-    //year % 4 == 0 && year % 100 == 0
-    if (year % 4 == 0 && year % 100 != 0) {
-        printf("%d年はうるう年です。\n", year);
+int main(void) {
+    char rank = 'R';     
+    int time = 0;
+    int discount = 0;
+    int base_charge = 0;
+
+    printf("会員ランクを入力（G:ゴールド / R:レギュラー）: ");
+
+    //文字入力
+    //scanf_s("%c", &rank, ①);
+    scanf_s("%c", &rank, 1);
+    //sizeof(char)
+    //&rank
+    //1 〇
+    //NULL
+
+    printf("利用時間を分単位で入力してください: ");
+    scanf_s("%d", &time);
+
+    //基本料金の計算（1分4円）
+    base_charge = time * 4;
+
+
+	//ゴールド会員、または「レギュラーかつ100分未満」の条件は？
+    //if (rank == 'G' || (rank == 'R' && ②) {
+    if (rank == 'G' || (rank == 'R' && time < 100)) {
+        //time <= 100
+        //time < 100
+        //time >= 100
+        //time > 100
+        //【問】ゴールドなら30%引き、レギュラー（100分未満）なら0%引き
+        if (rank == 'G') {
+            discount = 30;
+        } else {
+            discount = 0;
+        }
+    }
+    //レギュラー会員の長時間利用の判定
+    else if (time >= 100){
+        //else if ([③]) {
+        //time >= 200
+        //time >= 100
+        //time < 200
+        //time < 100
+        discount = 10;
+    //} else if ([④]) {
+    } else if (time >= 200) {
+        //time >= 200
+        //time >= 100
+        //time < 200
+        //time < 100
+        discount = 20;
     } else {
-        printf("%d年はうるう年ではありません。\n", year);
+        discount = 0;
     }
 
-    int currentMonth = 6; // 判定したい月（例として9月
-    // 2月、または4月、または6月、または9月、または11月
-    // currentMonth == 2 && currentMonth == 4 && currentMonth == 6 && currentMonth == 9 && currentMonth == 11
-    //currentMonth == 2 || 4 || 6 || 9 || 11
-    //currentMonth == 2 || currentMonth == 4 || currentMonth == 6 || currentMonth == 9 || currentMonth == 11
-    //currentMonth == 246911
-    if (currentMonth == 2 || currentMonth == 4 || currentMonth == 6 || currentMonth == 9 || currentMonth == 11) {
-        printf("%d月は小の月(西向く侍)です。\n", currentMonth);
-    } else {
-        printf("%d月は大の月（31日まである月）です。\n", currentMonth);
-    }
 
-    int adultAge = 18;
-    //if (adultAge[空欄] 18) {
-    if (adultAge >= 18) {
-        // >
-        // >=
-        // =>
-        // <
-        printf("免許取得可能です。\n");
-    } else {
-        printf("まだ免許は取得できません。\n");
-    }
-
-    int age = 18;
-    if (age < 3) {
-        printf("入場料は【無料】です。\n");
-
-    } else if (age < 12) { // 子供料金の条件
-        //else if ( [  空欄  ] ) {
-        //age >= 3 && age < 12△一応通るけどelse if の使い方的には2が正しい
-        //age < 12〇
-        //3 <= age < 12
-        //age >= 3 || age < 12
-        printf("入場料は【子供料金】です。\n");
-    } else {
-        printf("入場料は【大人料金】です。\n");
-    }
-
-
-    
-
+    // 割引後の料金を計算する正しい式は？
+    //int finalCharge = [⑤];
+    int finalCharge = base_charge * (100 - discount) / 100;
+    //base_charge * (discount / 100)
+    //base_charge * (100 - discount) / 100
+    //base_charge - discount
+    //base_charge * (1 - discount)
+    printf("最終料金は %d 円です。\n", finalCharge);
     return 0;
 }
