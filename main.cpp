@@ -17,8 +17,8 @@ int main() {
 	int tmp = data[3];
 	data[1] = tmp + 5;
 	data[2] = data[1];
-	printf("%d", data[2]);//⑤
-	printf("%d", data2[4]);//⑥
+	printf("%d\n", data[2]);//⑤
+	printf("%d\n", data2[4]);//⑥
 
 	return 0;
 }
