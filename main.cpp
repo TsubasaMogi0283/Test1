@@ -12,7 +12,6 @@ int main() {
 	printf("%c\n", str[1]);//③
 
 	//printf("%〇\n", 〇);//④ c,s,d,t⑤&str,str
-	printf("%s\n", str);//⑥Kamata
 
 	return 0;
 }
