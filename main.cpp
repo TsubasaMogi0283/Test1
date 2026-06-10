@@ -33,7 +33,7 @@ int main() {
 	// コンパイルエラー
 
 
-	if (ORIGIN_WEIGHT <= PREDICTION + CONFIDENCE) {
+	if (ORIGIN_WEIGHT < PREDICTION + CONFIDENCE) {
 		printf("重力すら俺に見惚れている\n");
 	} else {
 		printf("自信が積み重なってできた結果だ\n");
