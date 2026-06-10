@@ -4,13 +4,13 @@
 int main() {
     int year = 2026; // 判定したい西暦
 
-    // 4で割り切れて（かつ）100で割り切れない
+    // 4で割り切れる
     //if ([空欄]) {
-    //year % 4 == 0 || year % 100 != 0
-    //year % 4 == 0 && year % 100 != 0〇
-    //year / 4 == 0 && year / 100 != 0
-    //year % 4 == 0 && year % 100 == 0
-    if (year % 4 == 0 && year % 100 != 0) {
+    //year % 4 == 0
+    //year % 4 == 0
+    //year / 4 == 0
+    //year % 4 == 0
+    if (year % 4 == 0 ) {
         printf("%d年はうるう年です。\n", year);
     } else {
         printf("%d年はうるう年ではありません。\n", year);
