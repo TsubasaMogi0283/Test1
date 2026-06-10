@@ -11,7 +11,7 @@ int main(void) {
     char rank = 'R';     
     int time = 0;
     int discount = 0;
-    int base_charge = 0;
+    int baseCharge = 0;
 
     printf("会員ランクを入力（G:ゴールド / R:レギュラー）: ");
 
@@ -27,7 +27,7 @@ int main(void) {
     scanf_s("%d", &time);
 
     //基本料金の計算（1分4円）
-    base_charge = time * 4;
+    baseCharge = time * 4;
 
 
 	//ゴールド会員、または「レギュラーかつ100分未満」の条件は？
@@ -45,7 +45,7 @@ int main(void) {
         }
     }
     //レギュラー会員の長時間利用の判定
-    else if (time >= 100){
+    else if (time >= 200){
         //else if ([③]) {
         //time >= 200
         //time >= 100
@@ -53,7 +53,7 @@ int main(void) {
         //time < 100
         discount = 10;
     //} else if ([④]) {
-    } else if (time >= 200) {
+    } else if (time >= 100) {
         //time >= 200
         //time >= 100
         //time < 200
@@ -66,11 +66,11 @@ int main(void) {
 
     // 割引後の料金を計算する正しい式は？
     //int finalCharge = [⑤];
-    int finalCharge = base_charge * (100 - discount) / 100;
-    //base_charge * (discount / 100)
-    //base_charge * (100 - discount) / 100
-    //base_charge - discount
-    //base_charge * (1 - discount)
+    int finalCharge = baseCharge * (100 - discount) / 100;
+    //baseCharge * (discount / 100)
+    //baseCharge * (100 - discount) / 100
+    //baseCharge - discount
+    //baseCharge * (1 - discount)
     printf("最終料金は %d 円です。\n", finalCharge);
     return 0;
 }
