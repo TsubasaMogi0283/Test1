@@ -7,10 +7,10 @@ int main() {
 	double numD = 9.0;
 
 	//printf("整数: %①, 浮動小数点: %②, 倍精度浮動小数点: %③\n", numI, numF, numD);
-	//7,8.000000,9.000000
+	//7,8.00,9.0
 	printf("整数: %d\n", numI);
-	printf("浮動小数点: %f\n", numF);
-	printf("倍精度浮動小数点: %lf\n", numD);
+	printf("浮動小数点: %.2f\n", numF);
+	printf("倍精度浮動小数点: %.1lf\n", numD);
 
 
 	//小数点と整数の関係
